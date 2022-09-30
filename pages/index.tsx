@@ -3,17 +3,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Twitter from "../components/Twitter";
 import IconButton from "../components/IconButton";
-
-const quotes = [
-  "برای آزادانه رقصیدن تو کوچه پس کوچه های کشورم",
-  "برای تمام روزهایی با ترس معشوقمان را در خیابان بوسیدیم",
-  `برای خواهرم
-خواهرت
-خواهرمون`,
-  "برای تغییر مغز های پوسیده",
-  "برای اون پدری که شرمنده خانوادش شده و کمرش زیر بار مشکلات خم شد...🖤",
-  "برای یه زندگی معمولی",
-];
+import { readFile } from "fs/promises";
+import path from "path";
 
 type Props = {
   randomQuote: string;
@@ -31,7 +22,7 @@ const Home: NextPage<Props> = (props) => {
         <div className={styles.border}>
           <h1 className={styles.title}>{randomQuote}</h1>
 
-          <IconButton className={styles.iconButton}>
+          <IconButton className={styles.twitterIconButton}>
             <Twitter />
           </IconButton>
         </div>
@@ -40,8 +31,12 @@ const Home: NextPage<Props> = (props) => {
   );
 };
 
-export function getServerSideProps() {
-  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+export async function getServerSideProps() {
+  const barayePath = path.join(process.cwd(), "data", "baraye.csv");
+  const quotesCsv = await readFile(barayePath, "utf-8");
+  const barayeJson = quotesCsv.split("\n").map((quote) => quote.split(","));
+
+  const randomQuote = barayeJson[Math.floor(Math.random() * barayeJson.length)];
 
   return {
     props: { randomQuote },
