@@ -29,7 +29,7 @@ const Home: NextPage<Props> = (props) => {
       <div className={styles.wrapper}>
         <div className={styles.border}>
           <div className="container">
-            <h1 className={styles.title}>برای این همه برای غیر تکراری</h1>
+            <h1 className={styles.title}>{randomQuote}</h1>
             <IconButton className={styles.twitterIconButton}>
               <Twitter />
             </IconButton>
