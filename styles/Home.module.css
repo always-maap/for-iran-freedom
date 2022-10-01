@@ -1,26 +1,26 @@
-.container {
+.wrapper {
   height: 100%;
   direction: rtl;
-	padding: 8px;
+  padding: 8px;
 }
 
 .border {
-	position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-	border: 1px solid white;
-	border-radius: 10px;
-	padding: 8px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 8px;
   height: 100%;
-	overflow: hidden;
+  overflow: hidden;
 }
 
 .title {
   font-size: 3rem;
-	text-align: center;
-	text-decoration: underline;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .twitterIconButton {
@@ -30,5 +30,5 @@
 
 .twitter:hover {
   cursor: pointer;
-	transform: translateY(-5px);
+  transform: translateY(-5px);
 }

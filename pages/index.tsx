@@ -5,6 +5,7 @@ import Twitter from "../components/Twitter";
 import IconButton from "../components/IconButton";
 import { readFile } from "fs/promises";
 import path from "path";
+import cn from "classnames";
 
 type Props = {
   randomQuote: string;
@@ -16,15 +17,20 @@ const Home: NextPage<Props> = (props) => {
   return (
     <>
       <Head>
-        <title>برای...</title>
+        <title>برای... ایران</title>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="برای... ایران" />
+        <meta name="twitter:description" content="برای... ایران" />
+        <meta name="twitter:image" content="/twitter-card.png" />
       </Head>
-      <div className={styles.container}>
+      <div className={styles.wrapper}>
         <div className={styles.border}>
-          <h1 className={styles.title}>{randomQuote}</h1>
-
-          <IconButton className={styles.twitterIconButton}>
-            <Twitter />
-          </IconButton>
+          <div className="container">
+            <h1 className={styles.title}>برای این همه برای غیر تکراری</h1>
+            <IconButton className={styles.twitterIconButton}>
+              <Twitter />
+            </IconButton>
+          </div>
         </div>
       </div>
     </>
