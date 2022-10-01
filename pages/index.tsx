@@ -20,7 +20,7 @@ const Home: NextPage<Props> = (props) => {
         <title>برای... ایران</title>
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="برای... ایران" />
-        <meta name="twitter:description" content="برای... ایران" />
+        <meta name="twitter:description" content="#مهساـامینی #mahsaamini" />
         <meta
           name="twitter:image"
           content="https://www.for-iran-freedom.com/twitter-card.png"
