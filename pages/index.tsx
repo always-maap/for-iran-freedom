@@ -21,7 +21,10 @@ const Home: NextPage<Props> = (props) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="برای... ایران" />
         <meta name="twitter:description" content="برای... ایران" />
-        <meta name="twitter:image" content="/twitter-card.png" />
+        <meta
+          name="twitter:image"
+          content="https://www.for-iran-freedom.com/twitter-card.png"
+        />
       </Head>
       <div className={styles.wrapper}>
         <div className={styles.border}>
